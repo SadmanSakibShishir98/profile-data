@@ -1,0 +1,24 @@
+.profileInfo{
+     border: 1px solid rgb(9, 19, 19);
+      margin: 20px; 
+      display: flex;
+}
+
+.profileInfo img{
+    width: 200px;
+    height:200px;
+    border:1px solid lightgray;
+    margin: 20px;
+           
+}
+
+.profileInfo p{
+    line-height: 1;
+}
+.profileInfo button{
+    background-color :lightgreen;
+    height: 40px;
+    width: 100px;
+    border-radius: 5px;
+    
+}

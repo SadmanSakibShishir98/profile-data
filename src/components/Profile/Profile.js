@@ -1,28 +1,37 @@
 import React from "react";
+import ReactDOM from "react-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUserFriends } from "@fortawesome/free-solid-svg-icons";
+import "./profile.css";
 
 const Profile = (props) => {
   const profile = props.profile;
-  const { name, salary, address, image, email, gender, id, phone } = profile;
+  const { name, salary, address, image, email, gender, Phone } = profile;
+  // console.log(profile);
+  const handleAddProfile = props.handleAddProfile;
   return (
-    <div style={{ border: "1px solid red", margin: "20px" }}>
-      <img
-        style={{
-          border: "1px solid goldenrod",
-          margin: "20px",
-          width: "100px",
-        }}
-        src={image}
-        alt=""
-      />
-      <h3> {name}</h3>
-      <h4>address: {address}</h4>
-      <h4>id: {id}</h4>
-      <h4>phone: {phone}</h4>
-      <h4> salary: {salary}</h4>
-      <h4> email: {email}</h4>
-      <h4>gender: {gender}</h4>
-      <h4>salary: {salary}</h4>
-      <button style={{ margin: "20px" }}>add friend</button>
+    <div className="profileInfo">
+      <div>
+        <img src={image} alt="" />
+      </div>
+
+      <div>
+        <h3> {name}</h3>
+        <p>address: {address}</p>
+
+        <p>phone: {Phone}</p>
+
+        <p> email: {email}</p>
+        <p>gender: {gender}</p>
+        <p>salary: {salary}</p>
+        <button
+          onClick={() => handleAddProfile(profile)}
+          style={{ margin: "20px" }}
+        >
+          <FontAwesomeIcon icon={faUserFriends} />
+          add friend
+        </button>
+      </div>
     </div>
   );
 };
